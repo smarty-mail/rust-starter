@@ -35,19 +35,16 @@ async fn main() {
 
 async fn hello() -> &'static str {
     println!("Hello, World!");
-    tracing::info!("Hello, World!");
     "Hello, World!"
 }
 
 async fn hey(Path(name): Path<String>) -> impl IntoResponse {
     println!("Hello, {}!", name);
-    tracing::info!("Hello, {}!", name);
     format!("Hello, {}!", name)
 }
 
 async fn are_you_ready() -> impl IntoResponse {
     println!("I'm ready!");
-    tracing::info!("I'm ready!");
     "I'm ready!"
 }
 
